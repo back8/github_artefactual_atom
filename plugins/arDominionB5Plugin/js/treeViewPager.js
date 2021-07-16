@@ -1,16 +1,33 @@
-"use strict";
+
 
 (function ($) {
 
-  var TreeviewPager = function(limit, treeEl, url)
+  "use strict";
+
+  //var TreeviewPager = function(limit, treeEl, url)
+  //{
+  //  Pager.call(this, limit);
+  //  this.treeEl = treeEl;
+  //  this.url = url;
+  //  this.rootId = '#';
+  //}
+
+
+  function TreeviewPager ()
   {
-    Pager.call(this, limit);
+  };
+
+  //TreeviewPager.prototype = new Pager;
+  //TreeviewPager.prototype = $('#fullwidth-treeview-configuration').data('pager');
+
+  TreeviewPager.prototype.initTreeviewPager = function(limit, treeEl, url)
+  {
+    console.log("SBSBSB inside treeview pager.")
+    //Pager.call(this, limit);
     this.treeEl = treeEl;
     this.url = url;
     this.rootId = '#';
   }
-
-  TreeviewPager.prototype = new Pager;
 
   TreeviewPager.prototype.getAndAppendNodes = function(cb)
   {
@@ -105,4 +122,15 @@
     // Update paging button and scroll treeview window to first node
     this.updateMoreLink($moreButton, $resetButton);
   }
+
+  $(function()
+  {
+    var $fullWidthTreeView = $('#fullwidth-treeview-configuration');
+
+    if ($fullWidthTreeView.length)
+    {
+      $fullWidthTreeView.data('treeview-pager', TreeviewPager);
+    }
+  });
+
 })(jQuery);

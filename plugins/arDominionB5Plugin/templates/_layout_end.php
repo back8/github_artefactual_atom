@@ -18,6 +18,7 @@
     <script src="/plugins/arDominionB5Plugin/js/expander.js"></script>
     <script src="/plugins/arDominionB5Plugin/js/clipboard.js"></script>
     <script src="/js/editingHistory.js"></script>
+    <script src="/plugins/arDominionB5Plugin/js/treeviewTypes.js"></script>
     <script src="/plugins/arDominionB5Plugin/js/pager.js"></script>
     <script src="/plugins/arDominionB5Plugin/js/treeViewPager.js"></script>
     <script src="/plugins/arDominionB5Plugin/js/fullWidthTreeView.js"></script>

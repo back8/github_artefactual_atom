@@ -42,17 +42,19 @@ class InformationObjectIndexAction extends sfAction
 
         $this->dispatcher->notify(new sfEvent($this, 'access_log.view', ['object' => $this->resource]));
 
-        if ('fullWidth' == sfConfig::get('app_treeview_type__source', 'sidebar')) {
-            $this->getResponse()->addStylesheet('fullWidthTreeView', 'last');
-            $this->getResponse()->addStylesheet('/vendor/jstree/themes/default/style.min.css', 'last');
-            $this->getResponse()->addJavascript('treeviewTypes', 'last');
-            $this->getResponse()->addJavascript('pager', 'last');
-            $this->getResponse()->addJavascript('treeViewPager', 'last');
-            $this->getResponse()->addJavascript('fullWidthTreeView', 'last');
-            $this->getResponse()->addJavascript('/vendor/jstree/jstree.min.js', 'last');
-            $this->getResponse()->addJavaScript('/vendor/mediaelement/mediaelement-and-player.min.js', 'last');
-            $this->getResponse()->addJavaScript('mediaelement', 'last');
-            $this->getResponse()->addStyleSheet('/vendor/mediaelement/mediaelementplayer.min.css');
+        if (!sfConfig::get('app_b5_theme', false)) {
+            if ('fullWidth' == sfConfig::get('app_treeview_type__source', 'sidebar')) {
+                $this->getResponse()->addStylesheet('fullWidthTreeView', 'last');
+                $this->getResponse()->addStylesheet('/vendor/jstree/themes/default/style.min.css', 'last');
+                $this->getResponse()->addJavascript('treeviewTypes', 'last');
+                $this->getResponse()->addJavascript('pager', 'last');
+                $this->getResponse()->addJavascript('treeViewPager', 'last');
+                $this->getResponse()->addJavascript('fullWidthTreeView', 'last');
+                $this->getResponse()->addJavascript('/vendor/jstree/jstree.min.js', 'last');
+                $this->getResponse()->addJavaScript('/vendor/mediaelement/mediaelement-and-player.min.js', 'last');
+                $this->getResponse()->addJavaScript('mediaelement', 'last');
+                $this->getResponse()->addStyleSheet('/vendor/mediaelement/mediaelementplayer.min.css');
+            }
         }
 
         $scopeAndContent = $this->resource->getScopeAndContent(['cultureFallback' => true]);

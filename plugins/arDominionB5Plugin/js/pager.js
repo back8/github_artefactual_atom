@@ -124,4 +124,14 @@
       return url.replace("{limit}", this.getLimit());
     }
   };
+
+  //$(function()
+  //{
+  //  var $fullWidthTreeView = $('#fullwidth-treeview-configuration');
+
+ //   if ($fullWidthTreeView.length)
+  //  {
+  //    $fullWidthTreeView.data('pager', new Pager());
+  //  }
+  //});
 })(jQuery);

@@ -51,14 +51,20 @@
     var $mainHeader = $('#main-column h1').first();
     var $moreButton = $('#fullwidth-treeview-more-button');
     var $resetButton = $('#fullwidth-treeview-reset-button');
-    var pager = new TreeviewPager(itemsPerPage, $fwTreeView, collectionUrl + pathToApi);
+
+    var TreeviewPager = $('#fullwidth-treeview-configuration').data('treeview-pager');
+
+    console.log(typeof(TreeviewPager));
+    var pager = new TreeviewPager();
+    
+    pager.initTreeviewPager(itemsPerPage, $fwTreeView, collectionUrl + pathToApi);
 
     // Add tree-view divs after main header, animate and allow resize
     $mainHeader.after(
       $fwTreeViewRow
         .append($fwTreeView)
-        .animate({height: '200px'}, 500)
-        .resizable({handles: 's'})
+        //.animate({height: '200px'}, 500)
+        //.resizable({handles: 's'})
     );
 
     $mainHeader.before($resetButton);
@@ -91,7 +97,7 @@
         'data': {
           'url': function (node) {
             // Get results
-            var queryString = "?nodeLimit=" + (pager.getSkip() + pager.getLimit());
+            var queryString = "?nodeLimit=100"; // + (pager.getSkip() + pager.getLimit());
 
             return node.id === '#' ?
               window.location.pathname.match("^[^;]*")[0] + pathToApi + queryString :
@@ -110,11 +116,11 @@
             var data = JSON.parse(response);
 
             // Note root node's href and set number of available items to page through
-            if (pager.rootId == '#')
-            {
-              pager.rootId = data.nodes[0].id;
-              pager.setTotal(data.nodes[0].total);
-            }
+            //if (pager.rootId == '#')
+            //{
+            //  pager.rootId = data.nodes[0].id;
+            //  pager.setTotal(data.nodes[0].total);
+            //}
 
             // Allow for both styles of nodes
             if (typeof data.nodes === "undefined") {
