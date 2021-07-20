@@ -10,6 +10,8 @@
 <?php slot('content'); ?>
 
 <div id='main-column'></div>
-<span id="fullwidth-treeview-configuration" data-items-per-page="<?php echo $itemsPerPage; ?>"></span>
+<div id='fullwidth-treeview-hierarchy'>
+  <span id="fullwidth-treeview-configuration" data-items-per-page="<?php echo $itemsPerPage; ?>"></span>
+</div>
 
 <?php end_slot(); ?>
