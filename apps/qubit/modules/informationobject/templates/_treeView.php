@@ -97,15 +97,16 @@
     </ul>
 
   <?php } else { ?>
-
-    <input type="button" id="fullwidth-treeview-reset-button" class="c-btn c-btn-submit" value="<?php echo __('Reset'); ?>" />
-    <input type="button" id="fullwidth-treeview-more-button" class="c-btn c-btn-submit" data-label="<?php echo __('%1% more'); ?>" value="" />
-    <span id="fullwidth-treeview-configuration"
-      data-collection-url="<?php echo url_for([$resource->getCollectionRoot(), 'module' => 'informationobject']); ?>"
-      data-collapse-enabled="<?php echo $collapsible; ?>"
-      data-opened-text="<?php echo sfConfig::get('app_ui_label_fullTreeviewCollapseOpenedButtonText'); ?>"
-      data-closed-text="<?php echo sfConfig::get('app_ui_label_fullTreeviewCollapseClosedButtonText'); ?>"
-      data-items-per-page="<?php echo $itemsPerPage; ?>"></span>
+    <div class="d-flex justify-content-end flex-wrap gap-2 ms-auto">
+      <input type="button" id="fullwidth-treeview-reset-button" class="btn atom-btn-secondary" value="<?php echo __('Reset'); ?>" />
+      <input type="button" id="fullwidth-treeview-more-button" class="btn atom-btn-secondary" data-label="<?php echo __('%1% more'); ?>" value="" />
+      <span id="fullwidth-treeview-configuration"
+        data-collection-url="<?php echo url_for([$resource->getCollectionRoot(), 'module' => 'informationobject']); ?>"
+        data-collapse-enabled="<?php echo $collapsible; ?>"
+        data-opened-text="<?php echo sfConfig::get('app_ui_label_fullTreeviewCollapseOpenedButtonText'); ?>"
+        data-closed-text="<?php echo sfConfig::get('app_ui_label_fullTreeviewCollapseClosedButtonText'); ?>"
+        data-items-per-page="<?php echo $itemsPerPage; ?>"></span>
+    </div>
 
   <?php } ?>
 

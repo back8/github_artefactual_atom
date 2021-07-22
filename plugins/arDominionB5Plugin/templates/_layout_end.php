@@ -22,7 +22,7 @@
     <script src="/plugins/arDominionB5Plugin/js/masonry.js"></script>
     <script src="/js/editingHistory.js"></script>
     <script src="/plugins/arDominionB5Plugin/js/qubit.js"></script>
-    <script src="/js/treeviewTypes.js"></script>
+    <script src="/plugins/arDominionB5Plugin/js/treeviewTypes.js"></script>
     <script src="/js/pager.js"></script>
     <script src="/js/treeViewPager.js"></script>
     <script src="/plugins/arDominionB5Plugin/js/hierarchy.js"></script>
